@@ -37,4 +37,4 @@ class VendaObservacaoForm(forms.ModelForm):
 class VendaClienteForm(forms.ModelForm):
     class Meta:
         model = Venda
-        fields = '__all__'
+        fields = ['cliente']
