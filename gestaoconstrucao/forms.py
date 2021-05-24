@@ -31,7 +31,7 @@ class VidroForm(forms.ModelForm):
 class VendaObservacaoForm(forms.ModelForm):
     class Meta:
         model = Venda
-        fields = '__all__'
+        fields = ['observacao']
 
 
 class VendaClienteForm(forms.ModelForm):
