@@ -6,26 +6,22 @@
 
     <table class="table table-striped">
         <thead>
+
+
             <th>CLIENTE</th>
             <th>VALOR</th>
-            <th>NUMERO DA VENDA</th>
             <th>DATA DA VENDA</th>
+
+            <th>AÇÕES</th>
         </thead>
         <tbody>
     {% for obj_venda in object_list %}
             <tr>
+
+
                 <td>{{obj_venda.cliente}}</td>
                 <td>{{obj_venda.valor}}</td>
-                <td>{{obj_venda.numero_venda }}</td>
                 <td>{{obj_venda.data_venda}}</td>
-
-                {% if obj_venda.nome|length > 30 %}
-                <td>{{obj_venda.nome|slice:":30"}}...</td>
-                {% else %}
-                <td>{{obj_venda.nome|slice:":30"}}</td>
-                {% endif %}
-
-
 
                 <td>
                     <a href="{% url 'detalhes_venda' obj_venda.pk %}"><i class="fa fa-search" rel="tooltip" title="Ver detalhes da venda"></i> </a>
