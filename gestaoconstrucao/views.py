@@ -4,8 +4,10 @@ from django.views import View
 from django.views.generic import CreateView, ListView, UpdateView, DetailView
 from django.contrib import messages
 from django.urls import reverse_lazy
-from .forms import VendaForm, VendaObservacaoForm, VendaClienteForm, EletricosForm, HidraulicoForm
-from .models import Venda, Eletricos, Hidraulico, Cliente, Vidro, Tinta, Esquadria, Madeira, Pedra, Maquina,Ceramica
+from .forms import VendaForm, VendaObservacaoForm, VendaClienteForm, EletricosForm, HidraulicoForm, VidroForm, \
+    TintaForm, EsquadriaForm, MadeiraForm, PedraForm, CeramicaForm, CobertaForm, MaquinaForm, FerramentaForm, \
+    IluminacaoForm, EstruturaForm, PisoForm
+from .models import Venda, Eletricos, Hidraulico, Cliente, Vidro, Tinta, Esquadria, Madeira, Pedra, Maquina
 from .models import Ceramica, Coberta, Ferramenta, Iluminacao, Estrutura, Piso
 
 
@@ -51,6 +53,7 @@ class ClienteCreateView(CreateView):
 
 class VidroCreateView(CreateView):
     model = Vidro
+    form_class = VidroForm
     template_name = 'cadastrar/vidro.html'
 
     def get_success_url(self):
@@ -60,7 +63,7 @@ class VidroCreateView(CreateView):
 
 class TintaCreateView(CreateView):
     model = Tinta
-    form_class = VendaForm
+    form_class = TintaForm
     template_name = 'cadastrar/tinta.html'
 
     def get_success_url(self):
@@ -70,6 +73,7 @@ class TintaCreateView(CreateView):
 
 class EsquadriaCreateView(CreateView):
     model = Esquadria
+    form_class = EsquadriaForm
     template_name = 'cadastrar/esquadria.html'
 
     def get_success_url(self):
@@ -79,6 +83,7 @@ class EsquadriaCreateView(CreateView):
 
 class MadeiraCreateView(CreateView):
     model = Madeira
+    form_class = MadeiraForm
     template_name = 'cadastrar/madeira.html'
 
     def get_success_url(self):
@@ -88,6 +93,7 @@ class MadeiraCreateView(CreateView):
 
 class PedraCreateView(CreateView):
     model = Pedra
+    form_class = PedraForm
     template_name = 'cadastrar/pedra.html'
 
     def get_success_url(self):
@@ -97,6 +103,7 @@ class PedraCreateView(CreateView):
 
 class MaquinaCreateView(CreateView):
     model = Maquina
+    form_class = MaquinaForm
     template_name = 'cadastrar/maquina.html'
 
     def get_success_url(self):
@@ -106,6 +113,7 @@ class MaquinaCreateView(CreateView):
 
 class CeramicaCreateView(CreateView):
     model = Ceramica
+    form_class = CeramicaForm
     template_name = 'cadastrar/ceramica.html'
 
     def get_success_url(self):
@@ -115,6 +123,7 @@ class CeramicaCreateView(CreateView):
 
 class CobertaCreateView(CreateView):
     model = Coberta
+    form_class = CobertaForm
     template_name = 'cadastrar/coberta.html'
 
     def get_success_url(self):
@@ -124,6 +133,7 @@ class CobertaCreateView(CreateView):
 
 class FerramentaCreateView(CreateView):
     model = Ferramenta
+    form_class = FerramentaForm
     template_name = 'cadastrar/ferramenta.html'
 
     def get_success_url(self):
@@ -133,6 +143,7 @@ class FerramentaCreateView(CreateView):
 
 class IluminacaoCreateView(CreateView):
     model = Iluminacao
+    form_class = IluminacaoForm
     template_name = 'cadastrar/iluminacao.html'
 
     def get_success_url(self):
@@ -142,6 +153,7 @@ class IluminacaoCreateView(CreateView):
 
 class EstruturaCreateView(CreateView):
     model = Estrutura
+    form_class = EstruturaForm
     template_name = 'cadastrar/estrutura.html'
 
     def get_success_url(self):
@@ -151,6 +163,7 @@ class EstruturaCreateView(CreateView):
 
 class PisoCreateView(CreateView):
     model = Piso
+    form_class = PisoForm
     template_name = 'cadastrar/piso.html'
 
     def get_success_url(self):
@@ -165,6 +178,96 @@ class VendaListView(ListView):
     paginate_by = 3
 
 
+class EletricosListView(ListView):
+    model = Eletricos
+    template_name = 'listar/eletricos.html'
+    paginate_by = 3
+
+
+class HidraulicoListView(ListView):
+    model = Hidraulico
+    template_name = 'listar/hidraulico.html'
+    paginate_by = 3
+
+
+class ClienteListView(ListView):
+    model = Cliente
+    template_name = 'listar/cliente.html'
+    paginate_by = 3
+
+
+class VidroListView(ListView):
+    model = Vidro
+    template_name = 'listar/vidro.html'
+    paginate_by = 3
+
+
+class TintaListView(ListView):
+    model = Tinta
+    template_name = 'listar/tinta.html'
+    paginate_by = 3
+
+
+class EsquadriaListView(ListView):
+    model = Esquadria
+    template_name = 'listar/esquadria.html'
+    paginate_by = 3
+
+
+class MadeiraListView(ListView):
+    model = Madeira
+    template_name = 'listar/madeira.html'
+    paginate_by = 3
+
+
+class PedraListView(ListView):
+    model = Pedra
+    template_name = 'listar/pedra.html'
+    paginate_by = 3
+
+
+class MaquinaListView(ListView):
+    model = Maquina
+    template_name = 'listar/maquina.html'
+    paginate_by = 3
+
+
+class CeramicaListView(ListView):
+    model = Ceramica
+    template_name = 'listar/ceramica.html'
+    paginate_by = 3
+
+
+class CobertaListView(ListView):
+    model = Coberta
+    template_name = 'listar/coberta.html'
+    paginate_by = 3
+
+
+class FerramentaListView(ListView):
+    model = Ferramenta
+    template_name = 'listar/ferramenta.html'
+    paginate_by = 3
+
+
+class iluminacaoListView(ListView):
+    model = Iluminacao
+    template_name = 'listar/iluminacao.html'
+    paginate_by = 3
+
+
+class EstruturaListView(ListView):
+    model = Estrutura
+    template_name = 'listar/estrutura.html'
+    paginate_by = 3
+
+
+class PisoListView(ListView):
+    model = Piso
+    template_name = 'listar/piso.html'
+    paginate_by = 3
+
+
 # ______________________________________UpdateView_____________________________________
 class VendaCorrecaoUpdateView(UpdateView):
     model = Venda
@@ -174,6 +277,26 @@ class VendaCorrecaoUpdateView(UpdateView):
     def get_success_url(self):
         messages.success(self.request, 'Venda atualizada com sucesso!')
         return reverse_lazy('listar_venda')
+
+
+class EletricosUpdateView(UpdateView):
+    model = Eletricos
+    form_class = EletricosForm
+    template_name = 'atualizar/eletricos.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Venda de eletricos atualizada com sucesso!')
+        return reverse_lazy('listar_eletricos')
+
+
+class HidraulicoUpdateView(UpdateView):
+    model = Hidraulico
+    form_class = HidraulicoForm
+    template_name = 'atualizar/hidraulico.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Venda de hidraulico atualizada com sucesso!')
+        return reverse_lazy('listar_hidraulico')
 
 
 class VendaAtualizarObservacaoView(UpdateView):
@@ -196,7 +319,7 @@ class VendaAtualizarClienteView(UpdateView):
         return reverse_lazy('listar_venda')
 
 
-# ______________________________________DetailView_____________________________________
+# ______________________________________View_____________________________________
 
 class VendaView(View):
     def desabilitarVenda(self, pk: int):
@@ -208,6 +331,82 @@ class VendaView(View):
         return HttpResponseRedirect(reverse_lazy('listar_venda'))
 
 
+# ______________________________________DetailView_____________________________________
 class VendaDetailView(DetailView):
     model = Venda
     template_name = 'detalhes/venda.html'
+
+
+class EletricosDetailView(DetailView):
+    model = Eletricos
+    template_name = 'detalhes/eletricos.html'
+
+
+class HidraulicoDetailView(DetailView):
+    model = Hidraulico
+    template_name = 'detalhes/hidraulico.html'
+
+
+class ClisnteDetailView(DetailView):
+    model = Cliente
+    template_name = 'detalhes/cliente.html'
+
+
+class VidroDetailView(DetailView):
+    model = Vidro
+    template_name = 'detalhes/vidro.html'
+
+
+class TintaDetailView(DetailView):
+    model = Tinta
+    template_name = 'detalhes/tinta.html'
+
+
+class EsquadriaDetailView(DetailView):
+    model = Esquadria
+    template_name = 'detalhes/esquadria.html'
+
+
+class MadeiraDetailView(DetailView):
+    model = Madeira
+    template_name = 'detalhes/madeira.html'
+
+
+class PedraDetailView(DetailView):
+    model = Pedra
+    template_name = 'detalhes/pedra.html'
+
+
+class MaquinaDetailView(DetailView):
+    model = Maquina
+    template_name = 'detalhes/maquina.html'
+
+
+class CeramicaDetailView(DetailView):
+    model = Ceramica
+    template_name = 'detalhes/ceramica.html'
+
+
+class CobertaDetailView(DetailView):
+    model = Coberta
+    template_name = 'detalhes/coberta.html'
+
+
+class FerramentaDetailView(DetailView):
+    model = Ferramenta
+    template_name = 'detalhes/ferramenta.html'
+
+
+class IluminacaoDetailView(DetailView):
+    model = Iluminacao
+    template_name = 'detalhes/iluminacao.html'
+
+
+class EstruturaDetailView(DetailView):
+    model = Estrutura
+    template_name = 'detalhes/estrutura.html'
+
+
+class PisoDetailView(DetailView):
+    model = Piso
+    template_name = 'detalhes/piso.html'
