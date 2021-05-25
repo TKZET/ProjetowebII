@@ -10,6 +10,7 @@
             <th>CPF</th>
             <th>EMAIL</th>
             <th>ENDERECO</th>
+            <th>RECIBO</th>
         </thead>
         <tbody>
     {% for obj_cliente in object_list %}
@@ -19,6 +20,13 @@
                 <td>{{obj_cliente.nome}}</td>
                 <td>{{obj_cliente.cpf}}</td>
                 <td>{{obj_cliente.endereco}}</td>
+
+                <td>
+                    <center>
+                        <a target="_blank" href="{% url 'pdf_cliente' obj_cliente.pk %}"><i class="fa fa-file-pdf" rel="tooltip" title="Visualizar Recibo"></i> </a>
+                    </center>
+
+                </td>
 
                 <td>
                     <a href="{% url 'detalhes_cliente' obj_cliente.pk %}"><i class="fa fa-search" rel="tooltip" title="Ver detalhes da cliente"></i> </a>

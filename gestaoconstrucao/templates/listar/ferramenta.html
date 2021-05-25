@@ -11,6 +11,7 @@ tends 'adminlte/base.html' %}
             <th>DESCRIÇÕES</th>
             <th>MARCA</th>
             <th>JOGO</th>
+            <th>RECIBO</th>
         </thead>
         <tbody>
     {% for obj_ferramenta in object_list %}
@@ -21,6 +22,13 @@ tends 'adminlte/base.html' %}
                 <td>{{obj_ferramenta.descricao}}</td>
                 <td>{{obj_ferramenta.marca}}</td>
                 <td>{{obj_ferramenta.jogo}}</td>
+
+                <td>
+                    <center>
+                        <a target="_blank" href="{% url 'pdf_ferramenta' obj_ferramenta.pk %}"><i class="fa fa-file-pdf" rel="tooltip" title="Visualizar Recibo"></i> </a>
+                    </center>
+
+                </td>
 
 
                 <td>

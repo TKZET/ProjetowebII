@@ -9,6 +9,7 @@ from .forms import VendaForm, VendaObservacaoForm, VendaClienteForm, EletricosFo
     IluminacaoForm, EstruturaForm, PisoForm
 from .models import Venda, Eletricos, Hidraulico, Cliente, Vidro, Tinta, Esquadria, Madeira, Pedra, Maquina
 from .models import Ceramica, Coberta, Ferramenta, Iluminacao, Estrutura, Piso
+from easy_pdf.views import PDFTemplateResponseMixin
 
 
 # ______________________________________CreateView_____________________________________
@@ -520,3 +521,74 @@ class EstruturaDetailView(DetailView):
 class PisoDetailView(DetailView):
     model = Piso
     template_name = 'detalhes/piso.html'
+
+
+# ______________________________________PDFDetailView_____________________________________
+class VendaPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Venda
+    template_name = 'detalhes/pdf_venda.html'
+
+
+class EletricosPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Eletricos
+    template_name = 'detalhes/pdf_eletricos.html'
+
+
+class HidraulicoPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Hidraulico
+    template_name = 'detalhes/pdf_hidraulico.html'
+
+
+class ClientePDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Cliente
+    template_name = 'detalhes/pdf_cliente.html'
+
+
+class VidroPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Vidro
+    template_name = 'detalhes/pdf_vidro.html'
+
+
+class TintaPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Vidro
+    template_name = 'detalhes/pdf_vidro.html'
+
+
+class EsquadriaPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Esquadria
+    template_name = 'detalhes/pdf_esquadria.html'
+
+
+class MadeiraPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Madeira
+    template_name = 'detalhes/pdf_madeira.html'
+
+
+class PedraPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Pedra
+    template_name = 'detalhes/pdf_pedra.html'
+
+
+class MaquinaPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Maquina
+    template_name = 'detalhes/pdf_maquina.html'
+
+
+class CeramicaPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Ceramica
+    template_name = 'detalhes/pdf_ceramica.html'
+
+
+class FerramentaPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Ferramenta
+    template_name = 'detalhes/pdf_ferramenta.html'
+
+
+class IluminacaoPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Iluminacao
+    template_name = 'detalhes/pdf_iluminacao.html'
+
+
+class PisoPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = Piso
+    template_name = 'detalhes/pdf_piso.html'

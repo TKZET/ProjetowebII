@@ -11,6 +11,7 @@
             <th>COR</th>
             <th>TIPO</th>
             <th>FABRICANTE</th>
+            <th>RECIBO</th>
         </thead>
         <tbody>
     {% for obj_tinta in object_list %}
@@ -22,6 +23,13 @@
                 <td>{{obj_tinta.cor}}</td>
                 <td>{{obj_tinta.tipo}}</td>
                 <td>{{obj_tinta.fabricante}}</td>
+
+                <td>
+                    <center>
+                        <a target="_blank" href="{% url 'pdf_tinta' obj_tinta.pk %}"><i class="fa fa-file-pdf" rel="tooltip" title="Visualizar Recibo"></i> </a>
+                    </center>
+
+                </td>
 
                 <td>
                     <a href="{% url 'detalhes_tinta' obj_tinta.pk %}"><i class="fa fa-search" rel="tooltip" title="Ver detalhes de tinta"></i> </a>

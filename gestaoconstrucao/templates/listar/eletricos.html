@@ -9,6 +9,7 @@
             <th>NOME</th>
             <th>VALOR</th>
             <th>DESCRICAO</th>
+            <th>RECIBO</th>
         </thead>
         <tbody>
     {% for obj_eletricos in object_list %}
@@ -18,6 +19,13 @@
                 <td>{{obj_eletricos.nome}}</td>
                 <td>{{obj_eletricos.valor}}</td>
                 <td>{{obj_eletricos.descricao}}</td>
+
+                <td>
+                    <center>
+                        <a target="_blank" href="{% url 'pdf_eletricos' obj_eletricos.pk %}"><i class="fa fa-file-pdf" rel="tooltip" title="Visualizar Recibo"></i> </a>
+                    </center>
+
+                </td>
 
                 <td>
                     <a href="{% url 'detalhes_eletricos' obj_eletricos.pk %}"><i class="fa fa-search" rel="tooltip" title="Ver detalhes de eletricos"></i> </a>

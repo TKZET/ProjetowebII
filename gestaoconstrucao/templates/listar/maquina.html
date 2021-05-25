@@ -16,6 +16,7 @@ tends 'adminlte/base.html' %}
             <th>PLACA</th>
             <th>CNH CONDUTOR</th>
             <th>CHASSI</th>
+            <th>RECIBO</th>
 
 
         </thead>
@@ -32,6 +33,13 @@ tends 'adminlte/base.html' %}
                 <td>{{obj_maquina.placa}}</td>
                 <td>{{obj_maquina.cnhcondutor}}</td>
                 <td>{{obj_maquina.chasi}}</td>
+
+                <td>
+                    <center>
+                        <a target="_blank" href="{% url 'pdf_maquina' obj_maquina.pk %}"><i class="fa fa-file-pdf" rel="tooltip" title="Visualizar Recibo"></i> </a>
+                    </center>
+
+                </td>
 
 
                 <td>

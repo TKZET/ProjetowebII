@@ -11,6 +11,7 @@ tends 'adminlte/base.html' %}
             <th>METROS</th>
             <th>COR</th>
             <th>TEXTURA</th>
+            <th>RECIBO</th>
         </thead>
         <tbody>
     {% for obj_ceramica in object_list %}
@@ -21,6 +22,13 @@ tends 'adminlte/base.html' %}
                 <td>{{obj_maquina.metros}}</td>
                 <td>{{obj_maquina.cor}}</td>
                 <td>{{obj_maquina.textura}}</td>
+
+                <td>
+                    <center>
+                        <a target="_blank" href="{% url 'pdf_ceramica' obj_ceramica.pk %}"><i class="fa fa-file-pdf" rel="tooltip" title="Visualizar Recibo"></i> </a>
+                </center>
+
+                </td>
 
 
                 <td>

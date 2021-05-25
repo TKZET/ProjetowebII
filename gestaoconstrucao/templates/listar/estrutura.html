@@ -9,6 +9,7 @@ tends 'adminlte/base.html' %}
             <th>NOME</th>
             <th>VALOR</th>
             <th>DESCRIÇÕES</th>
+            <th>RECIBO</th>
         </thead>
         <tbody>
     {% for obj_estrutura in object_list %}
@@ -17,6 +18,13 @@ tends 'adminlte/base.html' %}
                 <td>{{obj_estrutura.nome}}</td>
                 <td>{{obj_estrutura.valor}}</td>
                 <td>{{obj_estrutura.descricao}}</td>
+
+                <td>
+                    <center>
+                        <a target="_blank" href="{% url 'pdf_estrutura' obj_estrutura.pk %}"><i class="fa fa-file-pdf" rel="tooltip" title="Visualizar Recibo"></i> </a>
+                    </center>
+
+                </td>
 
 
                 <td>

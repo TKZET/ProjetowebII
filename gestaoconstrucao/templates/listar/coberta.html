@@ -11,6 +11,7 @@ tends 'adminlte/base.html' %}
             <th>DIMENSÕES</th>
             <th>DESCRIÇÕES</th>
             <th>MARCA</th>
+            <th>RECIBO</th>
         </thead>
         <tbody>
     {% for obj_coberta in object_list %}
@@ -20,6 +21,13 @@ tends 'adminlte/base.html' %}
                 <td>{{obj_coberta.valor}}</td>
                 <td>{{obj_coberta.dimensoes}}</td>
                 <td>{{obj_coberta.marca}}</td>
+
+                <td>
+                    <center>
+                        <a target="_blank" href="{% url 'pdf_coberta' obj_coberta.pk %}"><i class="fa fa-file-pdf" rel="tooltip" title="Visualizar Recibo"></i> </a>
+                    </center>
+
+                </td>
 
 
                 <td>

@@ -13,6 +13,7 @@
             <th>METROS</th>
             <th>FORMATO</th>
             <th>DESCRICAO</th>
+            <th>RECIBO</th>
         </thead>
         <tbody>
     {% for obj_madeira in object_list %}
@@ -26,6 +27,13 @@
                 <td>{{obj_madeira.metros}}</td>
                 <td>{{obj_madeira.formato}}</td>
                 <td>{{obj_madeira.descricao}}</td>
+
+                <td>
+                    <center>
+                        <a target="_blank" href="{% url 'pdf_madeira' obj_madeira.pk %}"><i class="fa fa-file-pdf" rel="tooltip" title="Visualizar Recibo"></i> </a>
+                    </center>
+
+                </td>
 
                 <td>
                     <a href="{% url 'detalhes_madeira' obj_madeira.pk %}"><i class="fa fa-search" rel="tooltip" title="Ver detalhes de madeira"></i> </a>

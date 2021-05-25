@@ -9,6 +9,7 @@ tends 'adminlte/base.html' %}
             <th>NOME</th>
             <th>VALOR</th>
             <th>DESCRIÇÕES</th>
+            <th>RECIBO</th>
         </thead>
         <tbody>
     {% for obj_piso in object_list %}
@@ -17,6 +18,13 @@ tends 'adminlte/base.html' %}
                 <td>{{obj_piso.nome}}</td>
                 <td>{{obj_piso.valor}}</td>
                 <td>{{obj_piso.descricao}}</td>
+
+                <td>
+                    <center>
+                        <a target="_blank" href="{% url 'pdf_piso' obj_piso.pk %}"><i class="fa fa-file-pdf" rel="tooltip" title="Visualizar Recibo"></i> </a>
+                    </center>
+
+                </td>
 
 
                 <td>

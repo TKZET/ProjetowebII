@@ -13,12 +13,11 @@ tends 'adminlte/base.html' %}
             <th>FORMATO</th>
             <th>COR</th>
             <th>DESCRICAO</th>
+            <th>RECIBO</th>
         </thead>
         <tbody>
     {% for obj_pedra in object_list %}
             <tr>
-
-
 
                 <td>{{obj_pedra.tipo}}</td>
                 <td>{{obj_pedra.valor}}</td>
@@ -27,6 +26,13 @@ tends 'adminlte/base.html' %}
                 <td>{{obj_pedra.formato}}</td>
                 <td>{{obj_pedra.cor}}</td>
                 <td>{{obj_pedra.descricao}}</td>
+
+                <td>
+                    <center>
+                        <a target="_blank" href="{% url 'pdf_pedra' obj_pedra.pk %}"><i class="fa fa-file-pdf" rel="tooltip" title="Visualizar Recibo"></i> </a>
+                    </center>
+
+                </td>
 
                 <td>
                     <a href="{% url 'detalhes_pedra' obj_pedra.pk %}"><i class="fa fa-search" rel="tooltip" title="Ver detalhes de pedra"></i> </a>
