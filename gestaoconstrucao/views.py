@@ -299,6 +299,116 @@ class HidraulicoUpdateView(UpdateView):
         return reverse_lazy('listar_hidraulico')
 
 
+class VidroUpdateView(UpdateView):
+    model = Vidro
+    form_class = VidroForm
+    template_name = 'atualizar/vidro.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Venda de vidro atualizada com sucesso!')
+        return reverse_lazy('listar_vidro')
+
+
+class TintaUpdateView(UpdateView):
+    model = Tinta
+    form_class = TintaForm
+    template_name = 'atualizar/tinta.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Venda de tinta atualizada com sucesso!')
+        return reverse_lazy('listar_tinta')
+
+
+class EsquadriaUpdateView(UpdateView):
+    model = Esquadria
+    form_class = EsquadriaForm
+    template_name = 'atualizar/esquadria.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Venda de esquadria atualizada com sucesso!')
+        return reverse_lazy('listar_esquadria')
+
+
+class MadeiraUpdateView(UpdateView):
+    model = Madeira
+    form_class = MadeiraForm
+    template_name = 'atualizar/madeira.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Venda de madeira atualizada com sucesso!')
+        return reverse_lazy('listar_madeira')
+
+
+class PedraUpdateView(UpdateView):
+    model = Pedra
+    form_class = PedraForm
+    template_name = 'atualizar/pedra.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Venda de pedra atualizada com sucesso!')
+        return reverse_lazy('listar_pedra')
+
+
+class MaquinaUpdateView(UpdateView):
+    model = Maquina
+    form_class = MaquinaForm
+    template_name = 'atualizar/maquina.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Venda de maquina atualizada com sucesso!')
+        return reverse_lazy('listar_maquina')
+
+
+class CeramicaUpdateView(UpdateView):
+    model = Ceramica
+    form_class = CeramicaForm
+    template_name = 'atualizar/ceramica.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Venda de ceramica atualizada com sucesso!')
+        return reverse_lazy('listar_ceramica')
+
+
+class FerramentaUpdateView(UpdateView):
+    model = Ferramenta
+    form_class = FerramentaForm
+    template_name = 'atualizar/ferramenta.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Venda de ferramenta atualizada com sucesso!')
+        return reverse_lazy('listar_ferramenta')
+
+
+class IluminacaoUpdateView(UpdateView):
+    model = Iluminacao
+    form_class = IluminacaoForm
+    template_name = 'atualizar/iluminacao.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Venda de iluminacao atualizada com sucesso!')
+        return reverse_lazy('listar_iluminacao')
+
+
+class EstruturaUpdateView(UpdateView):
+    model = Estrutura
+    form_class = EstruturaForm
+    template_name = 'atualizar/estrutura.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Venda de estrutura atualizada com sucesso!')
+        return reverse_lazy('listar_estrutura')
+
+
+class PisoUpdateView(UpdateView):
+    model = Piso
+    form_class = PisoForm
+    template_name = 'atualizar/piso.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Venda de piso atualizada com sucesso!')
+        return reverse_lazy('listar_piso')
+
+
 class VendaAtualizarObservacaoView(UpdateView):
     model = Venda
     form_class = VendaObservacaoForm
@@ -347,7 +457,7 @@ class HidraulicoDetailView(DetailView):
     template_name = 'detalhes/hidraulico.html'
 
 
-class ClisnteDetailView(DetailView):
+class ClienteDetailView(DetailView):
     model = Cliente
     template_name = 'detalhes/cliente.html'
 
