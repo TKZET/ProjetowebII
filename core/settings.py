@@ -47,6 +47,7 @@ THIRDS_APPS = [
     'adminlte3',
     'adminlte3_theme',
     'django.contrib.admin',
+    'easy_pdf',
 
 ]
 
@@ -143,8 +144,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MIDIA_URL = ' /midia/'
-MIDIA_ROOT = os.path.join(BASE_DIR, 'midia')
+MIDIA_URL = ' /media/'
+MIDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

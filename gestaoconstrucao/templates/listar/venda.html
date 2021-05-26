@@ -9,8 +9,8 @@
             <th>CLIENTE</th>
             <th>VALOR</th>
             <th>DATA DA VENDA</th>
-            <th>AÇÕES</th>
             <th>RECIBO</th>
+            <th>AÇÕES</th>
         </thead>
         <tbody>
     {% for obj_venda in object_list %}
@@ -25,7 +25,6 @@
                     <center>
                         <a target="_blank" href="{% url 'pdf_venda' obj_venda.pk %}"><i class="fa fa-file-pdf" rel="tooltip" title="Visualizar Recibo"></i> </a>
                     </center>
-
                 </td>
 
                 <td>

@@ -20,15 +20,14 @@
         <br/>
         <br/>
         <h3>Dados da Venda</h3>
-        <p><b>Cliente:</b> {{ object.cliente }}</p>
+        <p><b>Nome:</b> {{ object.nome }}</p>
         <p><b>Valor:</b> {{ object.valor }}</p>
         <p><b>Observação:</b> {{ object.observacao }}</p>
         <br/>
         <h3>Dados do cliente</h3>
-        <p><b>Nome:</b> {{ object.nome }}</p>
+        <p><b>Cliente:</b> {{ object.cliente }}</p>
         <p><b>CPF:</b> {{ object.cliente.cpf }}</p>
         <p><b>E-mail:</b> {{ object.cliente.email_cliente }}</p>
-        <p><b>Endereço:</b> {{ object.cliente.endereco }}</p>
     </div>
 </div>
 {% endblock %}

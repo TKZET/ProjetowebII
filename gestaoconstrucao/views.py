@@ -1,18 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.views import View
-from django.views.generic import CreateView, ListView, UpdateView, DetailView
-from django.contrib import messages
 from django.urls import reverse_lazy
+from django.views import View
+from django.contrib import messages
+from easy_pdf.views import PDFTemplateResponseMixin
+from django.views.generic import CreateView, ListView, UpdateView, DetailView
 from .forms import VendaForm, VendaObservacaoForm, VendaClienteForm, EletricosForm, HidraulicoForm, VidroForm, \
     TintaForm, EsquadriaForm, MadeiraForm, PedraForm, CeramicaForm, CobertaForm, MaquinaForm, FerramentaForm, \
     IluminacaoForm, EstruturaForm, PisoForm
 from .models import Venda, Eletricos, Hidraulico, Cliente, Vidro, Tinta, Esquadria, Madeira, Pedra, Maquina
 from .models import Ceramica, Coberta, Ferramenta, Iluminacao, Estrutura, Piso
-from easy_pdf.views import PDFTemplateResponseMixin
 
 
-# ______________________________________CreateView_____________________________________
+
+#______________________________________CreateView_____________________________________
 
 class VendaCreateView(CreateView):
     form_class = VendaForm
@@ -20,7 +21,7 @@ class VendaCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Venda cadastrada com suceso!')
-        return reverse_lazy("listar_venda")
+        return reverse_lazy('listar_venda')
 
 
 class EletricosCreateView(CreateView):
@@ -30,7 +31,7 @@ class EletricosCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Eletrico cadastrado com suceso!')
-        return reverse_lazy("listar_eletricos")
+        return reverse_lazy('listar_eletricos')
 
 
 class HidraulicoCreateView(CreateView):
@@ -40,7 +41,7 @@ class HidraulicoCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Hidraulico cadastrado com suceso!')
-        return reverse_lazy("listar_hidraulico")
+        return reverse_lazy('listar_hidraulico')
 
 
 class ClienteCreateView(CreateView):
@@ -49,7 +50,7 @@ class ClienteCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Cliente cadastrado com suceso!')
-        return reverse_lazy("listar_cliente")
+        return reverse_lazy('listar_cliente')
 
 
 class VidroCreateView(CreateView):
@@ -59,7 +60,7 @@ class VidroCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Vidro cadastrado com suceso!')
-        return reverse_lazy("listar_vidro")
+        return reverse_lazy('listar_vidro')
 
 
 class TintaCreateView(CreateView):
@@ -69,7 +70,7 @@ class TintaCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Tinta cadastrado com suceso!')
-        return reverse_lazy("listar_tinta")
+        return reverse_lazy('listar_tinta')
 
 
 class EsquadriaCreateView(CreateView):
@@ -79,7 +80,7 @@ class EsquadriaCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Esquadria cadastrada com suceso!')
-        return reverse_lazy("listar_esquadria")
+        return reverse_lazy('listar_esquadria')
 
 
 class MadeiraCreateView(CreateView):
@@ -89,7 +90,7 @@ class MadeiraCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Madeira cadastrada com suceso!')
-        return reverse_lazy("listar_madeira")
+        return reverse_lazy('listar_madeira')
 
 
 class PedraCreateView(CreateView):
@@ -99,7 +100,7 @@ class PedraCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Pedra cadastrada com suceso!')
-        return reverse_lazy("listar_pedra")
+        return reverse_lazy('listar_pedra')
 
 
 class MaquinaCreateView(CreateView):
@@ -109,7 +110,7 @@ class MaquinaCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Maquina cadastrada com suceso!')
-        return reverse_lazy("listar_maquina")
+        return reverse_lazy('listar_maquina')
 
 
 class CeramicaCreateView(CreateView):
@@ -119,7 +120,7 @@ class CeramicaCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Ceramica cadastrada com suceso!')
-        return reverse_lazy("listar_ceramica")
+        return reverse_lazy('listar_ceramica')
 
 
 class CobertaCreateView(CreateView):
@@ -129,7 +130,7 @@ class CobertaCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Coberta cadastrada com suceso!')
-        return reverse_lazy("listar_coberta")
+        return reverse_lazy('listar_coberta')
 
 
 class FerramentaCreateView(CreateView):
@@ -139,7 +140,7 @@ class FerramentaCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Ferramenta cadastrada com suceso!')
-        return reverse_lazy("listar_ferramenta")
+        return reverse_lazy('listar_ferramenta')
 
 
 class IluminacaoCreateView(CreateView):
@@ -149,7 +150,7 @@ class IluminacaoCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Iluminacao cadastrada com suceso!')
-        return reverse_lazy("listar_iluminacao")
+        return reverse_lazy('listar_iluminacao')
 
 
 class EstruturaCreateView(CreateView):
@@ -159,7 +160,7 @@ class EstruturaCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Estrutura cadastrada com suceso!')
-        return reverse_lazy("listar_estrutura")
+        return reverse_lazy('listar_estrutura')
 
 
 class PisoCreateView(CreateView):
@@ -169,7 +170,7 @@ class PisoCreateView(CreateView):
 
     def get_success_url(self):
         messages.success(self.request, 'Piso cadastrado com suceso!')
-        return reverse_lazy("listar_piso")
+        return reverse_lazy('listar_piso')
 
 
 # ______________________________________ListView_____________________________________
