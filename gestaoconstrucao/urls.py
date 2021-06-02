@@ -10,26 +10,41 @@ from .views import VendaCreateView, EletricosCreateView, HidraulicoCreateView, C
 from .views import TintaCreateView, EsquadriaCreateView, MadeiraCreateView, PedraCreateView, MaquinaCreateView
 from .views import CeramicaCreateView, CobertaCreateView, FerramentaCreateView, IluminacaoCreateView
 from .views import PisoCreateView, VendaListView, VendaCorrecaoUpdateView, VendaAtualizarObservacaoView
-from .views import VendaAtualizarClienteView, VendaDetailView, VendaView, EstruturaCreateView, VendaPDFDetailView
+from .views import VendaAtualizarClienteView, VendaDetailView, VendaView, EstruturaCreateView, VendaPDFDetailView,  \
+    EletricosListView, CobertaListView, EsquadriaListView, EstruturaListView, FerramentaListView, MadeiraListView, \
+    MaquinaListView, PedraListView, PisoListView, TintaListView, IluminacaoListView, CeramicaListView, ClienteListView
 
 urlpatterns = [
     path('cadastrar/Venda', VendaCreateView.as_view(), name='cadastrar_venda'),
-    path('cadastrar/Eletricos', EletricosCreateView.as_view(), name='cadastrar_eletricos'),
-    path('cadastrar/Hidraulico', HidraulicoCreateView.as_view(), name='cadastrar_hidraulico'),
-    path('cadastrar/Cliente', ClienteCreateView.as_view(), name='cadastrar_cliente'),
-    path('cadastrar/Vidro', VidroCreateView.as_view(), name='cadastrar_vidro'),
-    path('cadastrar/Tinta', TintaCreateView.as_view(), name='cadastrar_tinta'),
-    path('cadastrar/Esquadria', EsquadriaCreateView.as_view(), name='cadastrar_esquadria'),
-    path('cadastrar/Madeira', MadeiraCreateView.as_view(), name='cadastrar_madeira'),
-    path('cadastrar/Pedra', PedraCreateView.as_view(), name='cadastrar_pedra'),
-    path('cadastrar/Maquina', MaquinaCreateView.as_view(), name='cadastrar_maquina'),
-    path('cadastrar/Ceramica', CeramicaCreateView.as_view(), name='cadastrar_ceramica'),
-    path('cadastrar/Coberta', CobertaCreateView.as_view(), name='cadastrar_coberta'),
+    path('cadastrar/eletricos', EletricosCreateView.as_view(), name='cadastrar_eletricos'),
+    path('cadastrar/hidraulico', HidraulicoCreateView.as_view(), name='cadastrar_hidraulico'),
+    path('cadastrar/cliente', ClienteCreateView.as_view(), name='cadastrar_cliente'),
+    path('cadastrar/vidro', VidroCreateView.as_view(), name='cadastrar_vidro'),
+    path('cadastrar/tinta', TintaCreateView.as_view(), name='cadastrar_tinta'),
+    path('cadastrar/esquadria', EsquadriaCreateView.as_view(), name='cadastrar_esquadria'),
+    path('cadastrar/madeira', MadeiraCreateView.as_view(), name='cadastrar_madeira'),
+    path('cadastrar/pedra', PedraCreateView.as_view(), name='cadastrar_pedra'),
+    path('cadastrar/maquina', MaquinaCreateView.as_view(), name='cadastrar_maquina'),
+    path('cadastrar/ceramica', CeramicaCreateView.as_view(), name='cadastrar_ceramica'),
+    path('cadastrar/coberta', CobertaCreateView.as_view(), name='cadastrar_coberta'),
     path('cadastrar/Ferramenta', FerramentaCreateView.as_view(), name='cadastrar_ferramenta'),
     path('cadastrar/Iluminacao', IluminacaoCreateView.as_view(), name='cadastrar_iluminacao'),
     path('cadastrar/Estrutura', EstruturaCreateView.as_view(), name='cadastrar_estrutura'),
     path('cadastrar/Piso', PisoCreateView.as_view(), name='cadastrar_piso'),
     path('listar/venda', VendaListView.as_view(), name='listar_venda'),
+    path('listar/ceramica', CeramicaListView.as_view(), name='listar_ceramica'),
+    path('listar/cliente', ClienteListView.as_view(), name='listar_cliente'),
+    path('listar/eletricos', EletricosListView.as_view(), name='listar_eletricos'),
+    path('listar/coberta', CobertaListView.as_view(), name='listar_coberta'),
+    path('listar/esquadria', EsquadriaListView.as_view(), name='listar_esquadria'),
+    path('listar/estrutura', EstruturaListView.as_view(), name='listar_estrutura'),
+    path('listar/ferramenta', FerramentaListView.as_view(), name='listar_ferramenta'),
+    path('listar/iluminacao', IluminacaoListView.as_view(), name='listar_iluminacao'),
+    path('listar/madeira', MadeiraListView.as_view(), name='listar_madeira'),
+    path('listar/maquina', MaquinaListView.as_view(), name='listar_maquina'),
+    path('listar/pedra', PedraListView.as_view(), name='listar_pedra'),
+    path('listar/piso', PisoListView.as_view(), name='listar_piso'),
+    path('listar/tinta', TintaListView.as_view(), name='listar_tinta'),
     path('atualizar/venda/<int:pk>', VendaCorrecaoUpdateView.as_view(), name='corrigir_venda'),
     path('atualizar/eletricos', EletricosUpdateView.as_view(), name='atualizar_eletricos'),
     path('atualizar/hidraulico', HidraulicoUpdateView.as_view(), name='atualizar_hidraulico'),

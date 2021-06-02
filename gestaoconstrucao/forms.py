@@ -94,6 +94,11 @@ class PisoForm(forms.ModelForm):
         model = Piso
         fields = '__all__'
 
+class ClienteForm(forms.ModelForm):
+    class Meta:
+        model = Cliente
+        fields = '__all__'
+
 
 # ______________________________________Form_____________________________________
 

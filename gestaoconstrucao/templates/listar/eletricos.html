@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Listagem de eletricos</h1>
-    <a class="btn btn-success" href="{% url 'cadastrar_eletricos' %}"><i class="fa fa-plus"></i> CADASTRAR ELETRICOS</a>
+    <a class="btn btn-success" href="{% url 'cadastrar_eletricos' %}"><i class="fa fa-plus"></i>CADASTRAR ELETRICOS</a>
 
     <table class="table table-striped">
         <thead>
@@ -25,18 +25,6 @@
                         <a target="_blank" href="{% url 'pdf_eletricos' obj_eletricos.pk %}"><i class="fa fa-file-pdf" rel="tooltip" title="Visualizar Recibo"></i> </a>
                     </center>
 
-                </td>
-
-                <td>
-                    <a href="{% url 'detalhes_eletricos' obj_eletricos.pk %}"><i class="fa fa-search" rel="tooltip" title="Ver detalhes de eletricos"></i> </a>
-                    <a href="{% url 'corrigir_venda' obj_venda.pk %}"><i class="fa fa-edit" rel="tooltip" title="Editar Venda"></i></a>
-                    <a href="{% url 'atualizar_observacao_venda' obj_venda.pk %}"><i class="fa fa-edit"  rel="tooltip" title="Editar Observação"></i></a>
-                    <a href="{% url 'atualizar_cliente_venda' obj_venda.pk %}"><i class="fa fa-edit"  rel="tooltip" title="Editar Cliente da Venda"></i></a>
-                    {% if obj_venda.excluido is False %}
-                    <a class="desabilitar-venda" data-url="{% url 'ajax_desabilitar_venda' obj_venda.pk %}" href="#"><i class="fa fa-times" rel="tooltip" title="Desabilitar Venda"></i></a>
-                    {% else %}
-                    <a class="habilitar-venda" data-url="{% url 'ajax_habilitar_venda' obj_venda.pk %}" href="#"><i class="fa fa-check" rel="tooltip" title="Habilitar Venda"></i></a>
-                    {% endif %}
                 </td>
             </tr>
     {% empty %}

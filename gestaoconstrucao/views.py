@@ -7,7 +7,7 @@ from easy_pdf.views import PDFTemplateResponseMixin
 from django.views.generic import CreateView, ListView, UpdateView, DetailView
 from .forms import VendaForm, VendaObservacaoForm, VendaClienteForm, EletricosForm, HidraulicoForm, VidroForm, \
     TintaForm, EsquadriaForm, MadeiraForm, PedraForm, CeramicaForm, CobertaForm, MaquinaForm, FerramentaForm, \
-    IluminacaoForm, EstruturaForm, PisoForm
+    IluminacaoForm, EstruturaForm, PisoForm, ClienteForm
 from .models import Venda, Eletricos, Hidraulico, Cliente, Vidro, Tinta, Esquadria, Madeira, Pedra, Maquina
 from .models import Ceramica, Coberta, Ferramenta, Iluminacao, Estrutura, Piso
 
@@ -47,6 +47,7 @@ class HidraulicoCreateView(CreateView):
 class ClienteCreateView(CreateView):
     model = Cliente
     template_name = 'cadastrar/cliente.html'
+    fields = '__all__'
 
     def get_success_url(self):
         messages.success(self.request, 'Cliente cadastrado com suceso!')
@@ -252,7 +253,7 @@ class FerramentaListView(ListView):
     paginate_by = 3
 
 
-class iluminacaoListView(ListView):
+class IluminacaoListView(ListView):
     model = Iluminacao
     template_name = 'listar/iluminacao.html'
     paginate_by = 3
@@ -461,7 +462,7 @@ class HidraulicoDetailView(DetailView):
 
 class ClienteDetailView(DetailView):
     model = Cliente
-    template_name = 'detalhes/cliente.html'
+    template_name = 'listar/cliente.html'
 
 
 class VidroDetailView(DetailView):
